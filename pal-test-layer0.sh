@@ -5,12 +5,15 @@ LAYER_NAME="pal-test-layer"
 
 function fetch_raw() {
     mkdir raw_data
-    python3 $SCRIPT_DIR/pal-test-layer1.py
+    python3 "${SCRIPT_DIR}/pal-test-layer1.py"
 }
 
-dsøfjøasdfgj.adsfsfd
+function process() {
+  mv raw_data/source.geojson processed/source.geojson
+}
+
 function tile() {
-    $TIPPECANOE $PROCESSED/*.geojson
+    $TIPPECANOE "${PROCESSED}"/*.geojson
 }
 
 function upload() {

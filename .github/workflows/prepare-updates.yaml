@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run ShellCheck
-        uses: ludeeus/action-shellcheck@master
+      - uses: ludeeus/action-shellcheck@master
         env:
           SHELLCHECK_OPTS: -e SC2034 # glintlp compatible shell scripts need to declare COUNTRY and LAYER_NAME variable
